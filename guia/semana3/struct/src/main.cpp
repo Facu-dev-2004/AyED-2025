@@ -1,24 +1,27 @@
 #include <iostream>
-#include "sensor.h"
+extern "C"{
+    #include "sensor.h"
+}
 
 using namespace std;
 
 int main() {
     
-    // int N;
-    // cout << "Cantidad de sensores: ";
-    // cin >> N;
+    int N;
+    cout << "Cantidad de sensores: ";
+    cin >> N;
 
     //TODO: Instanciar un array de Sensores de forma dinamica y de tamaño N
+    Sensor* sensores = new Sensor[N];
 
-    // string archivoEntrada;
-    // cout << "Archivo de entrada: ";
-    // cin >> archivoEntrada;
+    string archivoEntrada;
+    cout << "Archivo de entrada: ";
+    cin >> archivoEntrada;
 
-    // int leidos = cargarDesdeArchivo(archivoEntrada, sensores, N);
-    // cout << "Se leyeron " << leidos << " sensores.\n";
+    int leidos = cargarDesdeArchivo(archivoEntrada, sensores, N);
+    cout << "Se leyeron " << leidos << " sensores.\n";
 
-    // imprimir(sensores, leidos);
+    imprimir(sensores, leidos);
 
     // TODO: Que habria que hacer aca??
     return 0;
