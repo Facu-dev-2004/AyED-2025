@@ -40,14 +40,35 @@ float Recinto::_suma(Sensor** v, int n, std::string unidad){
 }
 
 int Recinto::_maximo(Sensor** v, int n, std::string unidad, int mejorPos){
+<<<<<<< HEAD
     //TODO
     
+=======
+    if(n==this->nSensores) return mejorPos;
+    else{
+        if(v[n]!=nullptr && v[n]->getUnidad()==unidad){
+            if(mejorPos==-1 || v[mejorPos]->getValor()<=v[n]->getValor()){
+                mejorPos = n;
+            }
+        }
+        return _maximo(v, n+1, unidad, mejorPos);
+    }
+>>>>>>> 9ed5c0e70d769926b202056a8e18e6013c9b3235
 }
 
-int Recinto::_buscar(Sensor** v, int n, const std::string& key){
+int Recinto::_buscar(Sensor** v, int n, const std::string& nombreBuscado){
     //TODO
 }
 
 Sensor* Recinto::_getSensor(Sensor** v, int n, int posBuscada){
-    //TODO
+    if(n==nSensores){
+        return nullptr;
+    }
+    else{
+        if(n==posBuscada){
+            return v[n];
+        }else{
+            return _getSensor(v, n+1, posBuscada);
+        }
+    }
 }
