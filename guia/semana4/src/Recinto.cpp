@@ -1,5 +1,6 @@
 #include "Recinto.h"
 #include <iostream>
+using namespace std;
 
 Recinto::Recinto(std::string nombre, int nSensores){
     this->nombre = nombre;
@@ -40,6 +41,7 @@ float Recinto::_suma(Sensor** v, int n, std::string unidad){
 
 int Recinto::_maximo(Sensor** v, int n, std::string unidad, int mejorPos){
     //TODO
+    
 }
 
 int Recinto::_buscar(Sensor** v, int n, const std::string& key){
